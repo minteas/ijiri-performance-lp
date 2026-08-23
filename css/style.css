@@ -401,9 +401,9 @@ p {
   background: linear-gradient(
     180deg,
     rgba(9, 9, 9, 0.75) 0%,
-    rgba(9, 9, 9, 0.55) 28%,
-    rgba(9, 9, 9, 0.58) 50%,
-    rgba(9, 9, 9, 0.92) 78%,
+    rgba(9, 9, 9, 0.6) 28%,
+    rgba(9, 9, 9, 0.7) 50%,
+    rgba(9, 9, 9, 0.93) 78%,
     rgba(9, 9, 9, 0.98) 100%
   );
 }
@@ -436,6 +436,7 @@ p {
   letter-spacing: 0.08em;
   color: var(--color-text-on-dark-light);
   margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero__kicker {
@@ -443,6 +444,7 @@ p {
   letter-spacing: 0.2em;
   color: var(--color-accent);
   margin-bottom: 14px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero__title {
@@ -451,6 +453,12 @@ p {
   font-weight: 900;
   color: var(--color-text-on-dark);
   letter-spacing: -0.03em;
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.hero__title-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .hero__desc {
@@ -459,6 +467,7 @@ p {
   color: var(--color-text-on-dark-light);
   line-height: 1.9;
   max-width: 34ch;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero__name {
@@ -473,6 +482,7 @@ p {
   font-size: 0.75rem;
   color: var(--color-text-on-dark-light);
   letter-spacing: 0.05em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero__name-value {
@@ -480,6 +490,7 @@ p {
   font-weight: 800;
   color: var(--color-text-on-dark);
   letter-spacing: 0.04em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero__cta {
