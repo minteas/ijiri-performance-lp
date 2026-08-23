@@ -19,6 +19,14 @@
 <!-- Favicon（仮。正式ロゴ確定後に差し替え／README参照） -->
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
 
+<!-- Fonts: 日本語=Noto Sans JP／英字ディスプレイ=Manrope -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap"
+  rel="stylesheet"
+/>
+
 <!-- GTM PLACEHOLDER: GA4/GTMのコンテナIDが決まり次第、<head>直後に公式スニペットを追加してください -->
 
 <link rel="stylesheet" href="css/style.css" />
@@ -104,7 +112,7 @@
 <header class="site-header">
   <div class="site-header__inner">
     <a class="site-header__brand" href="#top" aria-label="井尻有輝 トップへ">
-      <span class="site-header__sub">Mintea's PERFORMANCE</span>
+      <span class="site-header__sub">Mintea's — Human Performance Lab</span>
       <span class="site-header__name">井尻有輝</span>
     </a>
     <a class="site-header__cta btn btn--primary btn--small" href="#" data-role="form-link" data-cta="header" data-cta-position="header">
@@ -115,49 +123,48 @@
 
 <main id="main">
 
-  <!-- ================= SECTION 1: ファーストビュー ================= -->
+  <!-- ================= SECTION 1: ファーストビュー（フルブリード） ================= -->
   <section class="hero" id="top">
-    <div class="hero__inner">
-      <div class="hero__content">
-        <div class="hero__badges">
-          <span class="hero__badge">愛知県安城市</span>
-          <span class="hero__badge">三河安城駅 徒歩圏内</span>
-          <span class="hero__badge">ジュニア〜アスリート対応</span>
-        </div>
-        <h1 class="hero__title">
-          もっと動ける。<br />
-          もっと、できる。
-        </h1>
-        <p class="hero__desc">
-          子どもの運動能力から、アスリートの競技力向上まで。<br />
-          身体の動きを見て、<span class="underline-em">あなたに必要なトレーニング</span>を。
-        </p>
-        <div class="hero__name">
-          <span class="hero__name-role">安城市 身体能力・パフォーマンス向上トレーナー</span>
-        </div>
-        <div class="hero__name">
-          <span class="hero__name-value">井尻有輝</span>
-        </div>
-        <div class="hero__cta">
-          <a class="btn btn--primary btn--block" href="#" data-role="form-link" data-cta="hero" data-cta-position="fv">
-            身体能力チェックを体験する
-          </a>
-          <p class="cta-note">体験トレーニングのみのご相談も可能です</p>
-        </div>
+    <div class="hero__media">
+      <img
+        src="images/ijiri-portrait.jpg"
+        alt="安城市のパーソナルトレーナー 井尻有輝"
+        width="374"
+        height="577"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <p class="ghost-word hero__ghost" aria-hidden="true">PERFORMANCE</p>
+
+    <p class="hero__credit">井尻有輝／自身もテコンドー競技者としてトレーニングを実践・研究中</p>
+
+    <div class="hero__content">
+      <p class="hero__meta">愛知県安城市 ・ 三河安城駅 徒歩圏内 ・ ジュニア〜アスリート対応</p>
+      <p class="hero__kicker word-mark">HUMAN PERFORMANCE LAB</p>
+      <h1 class="hero__title">
+        もっと動ける。<br />
+        もっと、できる。
+      </h1>
+      <p class="hero__desc">
+        子どもの運動能力から、アスリートの競技力向上まで。
+        身体の動きを見て、<span class="underline-em">あなたに必要なトレーニング</span>を。
+      </p>
+      <div class="hero__name">
+        <span class="hero__name-role">安城市 身体能力・パフォーマンス向上トレーナー</span>
       </div>
-      <div class="hero__figure">
-        <img
-          src="images/ijiri-portrait.jpg"
-          alt="安城市のパーソナルトレーナー 井尻有輝"
-          width="374"
-          height="577"
-          fetchpriority="high"
-        />
-        <p class="hero__figure-caption">井尻有輝／自身もテコンドー競技者としてトレーニングを実践・研究中</p>
+      <div class="hero__name">
+        <span class="hero__name-value">井尻有輝</span>
+      </div>
+      <div class="hero__cta">
+        <a class="btn btn--primary btn--block" href="#" data-role="form-link" data-cta="hero" data-cta-position="fv">
+          身体能力チェックを体験する
+        </a>
+        <p class="cta-note">体験トレーニングのみのご相談も可能です</p>
       </div>
     </div>
     <div class="hero__scroll-cue" aria-hidden="true">
-      <span>Scroll</span>
+      <span>SCROLL</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
     </div>
   </section>
@@ -166,17 +173,17 @@
   <section class="section" aria-labelledby="worries-title">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">SYMPTOM</span>
+        <span class="eyebrow"><span class="eyebrow__num">01</span><span class="eyebrow__label">Symptom</span></span>
         <h2 class="section-title" id="worries-title">こんなお悩み、ありませんか？</h2>
         <p class="section-lead">お子さんのこと、ご自身のこと。一つでも当てはまれば、続きを読み進めてください。</p>
       </div>
       <ul class="worries">
-        <li class="worry-item"><span class="worry-item__mark">1</span>スポーツをもっと上手くなりたい</li>
-        <li class="worry-item"><span class="worry-item__mark">2</span>足をもっと速くしたい</li>
-        <li class="worry-item"><span class="worry-item__mark">3</span>身体の使い方を覚えたい</li>
-        <li class="worry-item"><span class="worry-item__mark">4</span>競技の練習はしているけど、伸び悩んでいる</li>
-        <li class="worry-item"><span class="worry-item__mark">5</span>自分の身体の弱点がよく分からない</li>
-        <li class="worry-item"><span class="worry-item__mark">6</span>子どもに何のトレーニングをさせればいいか分からない</li>
+        <li class="worry-item"><span class="worry-item__mark">01</span>スポーツをもっと上手くなりたい</li>
+        <li class="worry-item"><span class="worry-item__mark">02</span>足をもっと速くしたい</li>
+        <li class="worry-item"><span class="worry-item__mark">03</span>身体の使い方を覚えたい</li>
+        <li class="worry-item"><span class="worry-item__mark">04</span>競技の練習はしているけど、伸び悩んでいる</li>
+        <li class="worry-item"><span class="worry-item__mark">05</span>自分の身体の弱点がよく分からない</li>
+        <li class="worry-item"><span class="worry-item__mark">06</span>子どもに何のトレーニングをさせればいいか分からない</li>
       </ul>
     </div>
   </section>
@@ -185,130 +192,165 @@
   <section class="section section--soft" aria-labelledby="why-title">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">WHY PHYSICAL</span>
+        <span class="eyebrow"><span class="eyebrow__num">02</span><span class="eyebrow__label">Why Physical</span></span>
         <h2 class="section-title" id="why-title">
           筋力だけでは、<br />スポーツは上手くならない。
         </h2>
         <p class="section-lead">
-          競技の技術練習は、間違いなく大切です。うまくなるための一番の土台は、やはり競技そのものの練習にあります。<br />
+          競技の技術練習は、間違いなく大切です。うまくなるための一番の土台は、やはり競技そのものの練習にあります。
           ただ、技術練習だけでは伸ばしきれない部分も、実はあります。
         </p>
       </div>
       <div class="compare">
-        <div class="compare-card">
-          <p class="compare-card__label">技術練習（競技の練習）</p>
+        <div class="compare-card compare-card--muted">
+          <p class="compare-card__label">Technique — 技術練習</p>
           <p>フォーム、戦術、競技特有の動きなど、「その競技をうまくやるための技術」を身につける時間です。専門の指導者・コーチのもとで積み重ねるものであり、井尻はこの領域を否定するものではありません。</p>
         </div>
-        <div class="compare-plus" aria-hidden="true">+</div>
-        <div class="compare-card">
-          <p class="compare-card__label">身体能力トレーニング</p>
+        <div class="compare-card compare-card--strong">
+          <p class="compare-card__label">Physical Performance — 身体能力トレーニング</p>
           <p>速く動く、高く跳ぶ、バランスを取る、素早く切り返すといった「動くための土台」そのものを高める時間です。競技の技術が同じでも、土台となる身体能力が高まれば、動きの質は変わっていきます。</p>
         </div>
       </div>
       <p class="headline-card">
-        <span class="mark-hl">競技練習だけでは身につきにくい、身体そのものの能力を高める。</span><br class="u-sp" />
+        <span class="mark-hl">競技練習だけでは身につきにくい、身体そのものの能力を高める。</span>
         それが、井尻の専門です。
       </p>
     </div>
   </section>
 
-  <!-- ================= SECTION 4: 身体能力とは？ ================= -->
+  <!-- ================= SECTION 4: 身体能力とは？（スペックシート） ================= -->
   <section class="section" aria-labelledby="capability-title">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">WHAT IS PHYSICAL ABILITY</span>
+        <span class="eyebrow"><span class="eyebrow__num">03</span><span class="eyebrow__label">What is Physical Ability</span></span>
         <h2 class="section-title" id="capability-title">「身体能力」とは、何ができることか</h2>
         <p class="section-lead">
-          身体能力とは、スポーツにも日常生活にも必要な<span class="mark-hl">「動くための土台」</span>です。<br />
-          自分の身体を思い通りに動かせる状態を、いくつかの要素に分けて考えます。
+          身体能力とは、スポーツにも日常生活にも必要な<span class="mark-hl">「動くための土台」</span>です。
+          自分の身体を思い通りに動かせる状態を、8つの要素に分けて考えます。
         </p>
       </div>
-      <div class="capabilities">
-        <div class="capability-card">
-          <svg class="capability-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
-          <p class="capability-card__title">スピード</p>
-          <p>速く動く力。走る・移動するスピードそのものです。</p>
+      <div class="specs">
+        <div class="spec-item">
+          <span class="spec-item__num">01</span>
+          <span class="spec-item__en">Speed</span>
+          <div class="spec-item__body">
+            <p class="spec-item__title">スピード</p>
+            <p class="spec-item__desc">速く動く力。走る・移動するスピードそのものです。</p>
+          </div>
         </div>
-        <div class="capability-card">
-          <svg class="capability-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3.5M12 18.5V22M2 12h3.5M18.5 12H22M5 5l2.5 2.5M16.5 16.5 19 19M19 5l-2.5 2.5M7.5 16.5 5 19"/></svg>
-          <p class="capability-card__title">パワー</p>
-          <p>高く跳ぶ、強く踏み込むなど、瞬間的に大きな力を発揮する力です。</p>
+        <div class="spec-item">
+          <span class="spec-item__num">02</span>
+          <span class="spec-item__en">Power</span>
+          <div class="spec-item__body">
+            <p class="spec-item__title">パワー</p>
+            <p class="spec-item__desc">高く跳ぶ、強く踏み込むなど、瞬間的に大きな力を発揮する力です。</p>
+          </div>
         </div>
-        <div class="capability-card">
-          <svg class="capability-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M4 8l8-3 8 3M4 8l-1 6h5l-1-6M20 8l1 6h-5l1-6"/></svg>
-          <p class="capability-card__title">バランス</p>
-          <p>姿勢を保つ、崩れた体勢から立て直す力です。</p>
+        <div class="spec-item">
+          <span class="spec-item__num">03</span>
+          <span class="spec-item__en">Balance</span>
+          <div class="spec-item__body">
+            <p class="spec-item__title">バランス</p>
+            <p class="spec-item__desc">姿勢を保つ、崩れた体勢から立て直す力です。</p>
+          </div>
         </div>
-        <div class="capability-card">
-          <svg class="capability-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
-          <p class="capability-card__title">敏捷性</p>
-          <p>身体を素早く切り返す、方向転換する力です。</p>
+        <div class="spec-item">
+          <span class="spec-item__num">04</span>
+          <span class="spec-item__en">Agility</span>
+          <div class="spec-item__body">
+            <p class="spec-item__title">敏捷性</p>
+            <p class="spec-item__desc">身体を素早く切り返す、方向転換する力です。</p>
+          </div>
         </div>
-        <div class="capability-card">
-          <svg class="capability-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c4-10 12-10 16-16M4 4c4 6 12 6 16-4"/></svg>
-          <p class="capability-card__title">柔軟性</p>
-          <p>関節や筋肉を大きく、スムーズに動かせる範囲の広さです。</p>
+        <div class="spec-item">
+          <span class="spec-item__num">05</span>
+          <span class="spec-item__en">Flexibility</span>
+          <div class="spec-item__body">
+            <p class="spec-item__title">柔軟性</p>
+            <p class="spec-item__desc">関節や筋肉を大きく、スムーズに動かせる範囲の広さです。</p>
+          </div>
         </div>
-        <div class="capability-card">
-          <svg class="capability-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 9v6M17.5 9v6M2 12h2M20 12h2M4.5 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1zM15.5 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1zM8.5 11h7v2h-7z"/></svg>
-          <p class="capability-card__title">筋力</p>
-          <p>身体を支え、動かすための土台となる力です。</p>
+        <div class="spec-item">
+          <span class="spec-item__num">06</span>
+          <span class="spec-item__en">Strength</span>
+          <div class="spec-item__body">
+            <p class="spec-item__title">筋力</p>
+            <p class="spec-item__desc">身体を支え、動かすための土台となる力です。</p>
+          </div>
         </div>
-        <div class="capability-card">
-          <svg class="capability-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
-          <p class="capability-card__title">身体コントロール</p>
-          <p>思った通りに、狙った通りに身体を動かせる感覚です。</p>
+        <div class="spec-item">
+          <span class="spec-item__num">07</span>
+          <span class="spec-item__en">Control</span>
+          <div class="spec-item__body">
+            <p class="spec-item__title">身体コントロール</p>
+            <p class="spec-item__desc">思った通りに、狙った通りに身体を動かせる感覚です。</p>
+          </div>
         </div>
-        <div class="capability-card">
-          <svg class="capability-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 12a6 6 0 1 1-3-5.2M18 4v3h-3"/></svg>
-          <p class="capability-card__title">動き続ける力</p>
-          <p>疲れにくく、長く動き続けるための土台です。</p>
+        <div class="spec-item">
+          <span class="spec-item__num">08</span>
+          <span class="spec-item__en">Endurance</span>
+          <div class="spec-item__body">
+            <p class="spec-item__title">動き続ける力</p>
+            <p class="spec-item__desc">疲れにくく、長く動き続けるための土台です。</p>
+          </div>
         </div>
       </div>
-      <p class="capabilities-note">これらを個別に、または組み合わせて評価し、必要なトレーニングを組み立てます。</p>
+      <p class="specs-note">これらを個別に、または組み合わせて評価し、必要なトレーニングを組み立てます。</p>
     </div>
   </section>
 
-  <!-- ================= SECTION 5: 身体能力チェック ================= -->
+  <!-- ================= BAND: セクション間の演出 ================= -->
+  <section class="band band--dark" aria-hidden="true">
+    <p class="word-mark">MEASURE. <span>TRAIN.</span> IMPROVE.</p>
+  </section>
+
+  <!-- ================= SECTION 5: 身体能力チェック（PERFORMANCE CHECK） ================= -->
   <section class="section section--soft" id="check" aria-labelledby="check-title">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">BODY CHECK</span>
+        <span class="eyebrow"><span class="eyebrow__num">04</span><span class="eyebrow__label">Performance Check</span></span>
         <h2 class="section-title" id="check-title">まずは、自分の身体を知る。</h2>
         <p class="section-lead">
-          身体能力チェックでは、バランス・柔軟性・動作・ジャンプ・敏捷性・筋力などの観点から、目的に応じて身体の状態を確認します。<br />
+          身体能力チェックでは、バランス・柔軟性・動作・ジャンプ・敏捷性・筋力などの観点から、目的に応じて身体の状態を確認します。
           そして「今どこが強みで、何を伸ばすべきか」を分かりやすくお伝えし、必要なトレーニングをご提案します。
         </p>
       </div>
       <div class="flow">
         <div class="flow-step">
-          <span class="flow-step__num">1</span>
+          <span class="flow-step__num">01</span>
+          <span class="flow-step__en">Measure</span>
           <p class="flow-step__title">身体能力を測定</p>
           <p>目的・年齢・競技に応じた項目で、今の身体の状態を確認します。</p>
+          <span class="flow-step__arrow" aria-hidden="true">↓</span>
         </div>
         <div class="flow-step">
-          <span class="flow-step__num">2</span>
+          <span class="flow-step__num">02</span>
+          <span class="flow-step__en">Train</span>
           <p class="flow-step__title">課題に合わせてトレーニング</p>
           <p>強み・課題を踏まえ、必要なトレーニングを個別に組み立てます。</p>
+          <span class="flow-step__arrow" aria-hidden="true">↓</span>
         </div>
         <div class="flow-step">
-          <span class="flow-step__num">3</span>
+          <span class="flow-step__num">03</span>
+          <span class="flow-step__en">Retest</span>
           <p class="flow-step__title">再測定</p>
           <p>一定期間トレーニングを行った後、同じ観点で状態を確認します。</p>
+          <span class="flow-step__arrow" aria-hidden="true">↓</span>
         </div>
         <div class="flow-step">
-          <span class="flow-step__num">4</span>
+          <span class="flow-step__num">04</span>
+          <span class="flow-step__en">Improve</span>
           <p class="flow-step__title">変化を確認</p>
           <p>測定結果をもとに、次に取り組むべきことを一緒に見直します。</p>
         </div>
       </div>
       <div class="flow-check-items">
-        <div class="flow-check-item">バランス</div>
-        <div class="flow-check-item">柔軟性</div>
-        <div class="flow-check-item">動作</div>
-        <div class="flow-check-item">ジャンプ</div>
-        <div class="flow-check-item">敏捷性</div>
-        <div class="flow-check-item">筋力</div>
+        <span class="flow-check-item">Balance</span>
+        <span class="flow-check-item">Flexibility</span>
+        <span class="flow-check-item">Movement</span>
+        <span class="flow-check-item">Jump</span>
+        <span class="flow-check-item">Agility</span>
+        <span class="flow-check-item">Strength</span>
       </div>
       <div class="check-gallery">
         <img src="images/facility-rack-1.jpg" alt="ミンティーズ内のトレーニングスペース" loading="lazy" width="900" height="675" />
@@ -325,7 +367,7 @@
   <section class="section" aria-labelledby="features-title">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">APPROACH</span>
+        <span class="eyebrow"><span class="eyebrow__num">05</span><span class="eyebrow__label">Approach</span></span>
         <h2 class="section-title" id="features-title">井尻のトレーニングの特徴</h2>
         <p class="section-lead">感覚だけに頼らず、かといって理屈だけでも終わらせない指導を大切にしています。</p>
       </div>
@@ -359,6 +401,11 @@
     </div>
   </section>
 
+  <!-- ================= BAND: セクション間の演出 ================= -->
+  <section class="band band--light" aria-hidden="true">
+    <p class="word-mark">MOVE. PERFORM.</p>
+  </section>
+
   <!-- ================= 体験者の声（準備中の告知） ================= -->
   <section class="section section--soft" aria-labelledby="voice-title">
     <div class="container">
@@ -378,18 +425,18 @@
           <div class="media-placeholder">
             <div class="media-placeholder__inner">
               <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-              <p class="media-placeholder__label">ジュニア指導写真 準備中</p>
-              <p class="media-placeholder__sub">実写素材を追加予定です</p>
+              <p class="media-placeholder__label">TODO：ジュニア指導写真</p>
+              <p class="media-placeholder__sub">Photo coming soon</p>
             </div>
           </div>
         </div>
         <div>
-          <span class="target-tag">JUNIOR ATHLETE</span>
+          <span class="target-tag">Junior Athlete</span>
           <h2 class="target-title" id="junior-title">
             「もっと練習しなさい」ではなく、<br />身体そのものの能力を高める。
           </h2>
           <p class="target-lead">
-            足を速くしたい。ジャンプ力を高めたい。バランス能力を高めたい。動きを素早くしたい。競技力を高めたい。身体の使い方を覚えたい——。<br />
+            足を速くしたい。ジャンプ力を高めたい。バランス能力を高めたい。動きを素早くしたい。競技力を高めたい。身体の使い方を覚えたい——。
             競技の練習だけでは身につきにくい部分を、身体能力トレーニングで補っていきます。
           </p>
           <ul class="target-list">
@@ -414,15 +461,15 @@
     <div class="container">
       <div class="target-grid target-grid--reverse">
         <div class="target-grid__media">
-          <img src="images/ijiri-coaching.jpg" alt="一般のお客様のトレーニングを指導する井尻有輝" loading="lazy" width="674" height="900" style="border-radius: var(--radius-l);" />
+          <img src="images/ijiri-coaching.jpg" alt="一般のお客様のトレーニングを指導する井尻有輝" loading="lazy" width="674" height="900" />
         </div>
         <div>
-          <span class="target-tag">GENERAL / SENIOR</span>
+          <span class="target-tag">General / Senior</span>
           <h2 class="target-title" id="adult-title">
             筋肉をつけるだけではなく、<br />長く動ける身体へ。
           </h2>
           <p class="target-lead">
-            疲れにくい身体になりたい。体力をつけたい。年齢とともに身体が動かなくなってきた。趣味のスポーツをもっと楽しみたい——。<br />
+            疲れにくい身体になりたい。体力をつけたい。年齢とともに身体が動かなくなってきた。趣味のスポーツをもっと楽しみたい——。
             筋トレだけで終わらせず、バランスや柔軟性、動きの質まで含めて「動ける身体」を目指します。
           </p>
           <ul class="target-list">
@@ -439,21 +486,21 @@
   </section>
 
   <!-- ================= SECTION 9: 競技者向け ================= -->
-  <section class="target-section section--soft" id="athlete" aria-labelledby="athlete-title">
+  <section class="target-section section--dark" id="athlete" aria-labelledby="athlete-title">
     <div class="container">
       <div class="target-grid">
         <div class="target-grid__media">
           <div class="media-placeholder">
             <div class="media-placeholder__inner">
               <svg class="media-placeholder__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
-              <p class="media-placeholder__label">競技トレーニング写真・動画 準備中</p>
-              <p class="media-placeholder__sub">井尻自身のテコンドー競技のトレーニング映像を追加予定です</p>
+              <p class="media-placeholder__label">TODO：井尻 テコンドー競技トレーニング写真・動画</p>
+              <p class="media-placeholder__sub">Photo / video coming soon</p>
             </div>
           </div>
         </div>
         <div>
-          <span class="target-tag">ATHLETE</span>
-          <h2 class="target-title" id="athlete-title">
+          <span class="target-tag">Athlete</span>
+          <h2 class="target-title" id="athlete-title" style="color: var(--color-text-on-dark);">
             自分自身も、競技者として。
           </h2>
           <p class="target-lead">
@@ -477,16 +524,20 @@
   <section class="section" aria-labelledby="profile-title">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">PROFILE</span>
-        <h2 class="section-title" id="profile-title">井尻有輝について</h2>
+        <span class="eyebrow"><span class="eyebrow__num">06</span><span class="eyebrow__label">Profile</span></span>
+        <h2 class="section-title" id="profile-title" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);">井尻有輝について</h2>
       </div>
       <div class="profile">
         <div class="profile__photo">
           <img src="images/ijiri-portrait.jpg" alt="井尻有輝" loading="lazy" width="374" height="577" />
         </div>
         <div>
-          <p class="profile__name">井尻有輝</p>
-          <p class="profile__role">身体能力・パフォーマンス向上トレーナー／パーソナルジム ミンティーズ（Mintea's）</p>
+          <p class="profile__wordmark">Yuki<br />Ijiri</p>
+          <div class="profile__tags">
+            <span>Performance Trainer</span>
+            <span>Taekwondo Athlete</span>
+            <span>Mintea's</span>
+          </div>
           <div class="profile__bio">
             <p>愛知県安城市のパーソナルジム「ミンティーズ」で、パーソナルトレーナーとして活動。これまでダイエット・ボディメイクの指導にあたる中で、店舗責任者としてのべ200名以上のカウンセリング・食事指導にも携わってきました。</p>
             <p>自身もテコンドー競技者として、現在も自分自身の競技力向上のためにトレーニングを実践・研究しています。あわせて、アスリート向けトレーニングの知識を学び続けており、教科書の知識だけでなく、自分の身体で試しながら指導することを大切にしています。</p>
@@ -504,35 +555,25 @@
   </section>
 
   <!-- ================= SECTION 11: なぜ身体能力向上に取り組むのか ================= -->
-  <section class="section section--dark" aria-labelledby="vision-title">
+  <section class="vision-section section--dark" aria-labelledby="vision-title">
     <div class="container">
-      <div class="section-head" style="margin-bottom: 8px;">
-        <span class="eyebrow">VISION</span>
+      <span class="eyebrow"><span class="eyebrow__num">07</span><span class="eyebrow__label">Vision</span></span>
+      <p class="vision__kicker" id="vision-title">なぜ、身体能力向上に取り組んでいるのか。</p>
+      <p class="vision__quote-big">安城の子どもたちの<span class="mark-hl">身体能力向上に貢献したい。</span></p>
+      <div class="vision__body">
+        <p>以前、学校で子どもたちに運動を教える機会がありました。そのとき、身体の使い方一つで動きが大きく変わる子どもたちをたくさん見て、身体能力向上に関わることへの思いがさらに強くなりました。</p>
+        <p>僕自身、テコンドーという競技を続けてきて、自分の身体と向き合いながらトレーニングを研究しています。今学んでいるアスリート向けトレーニングの知識も、自分だけのものにせず、安城の子どもたちに還元していきたいと思っています。</p>
+        <p>最終的に目指しているのは、「安城で身体能力を上げたいなら井尻」と言ってもらえる存在になることです。まだそこに向かっている途中ですが、一人ひとりの身体と向き合うことを、これからも続けていきます。</p>
       </div>
-      <div class="vision">
-        <div>
-          <h2 class="section-title" id="vision-title" style="color: var(--color-text-on-dark);">
-            なぜ、身体能力向上に<br />取り組んでいるのか。
-          </h2>
-          <p class="vision__quote">安城の子どもたちの<br /><span class="mark-hl">身体能力向上に貢献したい。</span></p>
-        </div>
-        <div class="vision__answer">
-          <div class="vision__body">
-            <p>以前、学校で子どもたちに運動を教える機会がありました。そのとき、身体の使い方一つで動きが大きく変わる子どもたちをたくさん見て、身体能力向上に関わることへの思いがさらに強くなりました。</p>
-            <p>僕自身、テコンドーという競技を続けてきて、自分の身体と向き合いながらトレーニングを研究しています。今学んでいるアスリート向けトレーニングの知識も、自分だけのものにせず、安城の子どもたちに還元していきたいと思っています。</p>
-            <p>最終的に目指しているのは、「安城で身体能力を上げたいなら井尻」と言ってもらえる存在になることです。まだそこに向かっている途中ですが、一人ひとりの身体と向き合うことを、これからも続けていきます。</p>
-          </div>
-          <span class="vision__badge">井尻有輝</span>
-        </div>
-      </div>
+      <span class="vision__badge">井尻有輝</span>
     </div>
   </section>
 
   <!-- ================= SECTION 12: FAQ ================= -->
-  <section class="section section--soft" aria-labelledby="faq-title">
+  <section class="section" aria-labelledby="faq-title">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">FAQ</span>
+        <span class="eyebrow"><span class="eyebrow__num">08</span><span class="eyebrow__label">FAQ</span></span>
         <h2 class="section-title" id="faq-title">よくあるご質問</h2>
       </div>
       <div class="faq">
@@ -573,10 +614,10 @@
   </section>
 
   <!-- ================= アクセス ================= -->
-  <section class="section" id="access" aria-labelledby="access-title">
+  <section class="section section--soft" id="access" aria-labelledby="access-title">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">ACCESS</span>
+        <span class="eyebrow"><span class="eyebrow__num">09</span><span class="eyebrow__label">Access</span></span>
         <h2 class="section-title" id="access-title">活動場所・アクセス</h2>
       </div>
       <div class="access">
@@ -591,7 +632,7 @@
           </tbody>
         </table>
         <div>
-          <img src="images/facility-exterior.jpg" alt="パーソナルジム ミンティーズ 外観" loading="lazy" width="900" height="652" style="border-radius: var(--radius-m); margin-bottom: 12px;" />
+          <img src="images/facility-exterior.jpg" alt="パーソナルジム ミンティーズ 外観" loading="lazy" width="900" height="652" style="border-radius: var(--radius-m); margin-bottom: 16px; filter: grayscale(0.15) contrast(1.05);" />
           <div class="access-map">
             <iframe
               title="活動場所の地図"
@@ -605,7 +646,8 @@
   </section>
 
   <!-- ================= SECTION 13: 最終CTA ================= -->
-  <section class="final-cta" aria-labelledby="final-cta-title">
+  <section class="final-cta section--relative" aria-labelledby="final-cta-title">
+    <p class="ghost-word final-cta__ghost" aria-hidden="true">PERFORM</p>
     <div class="container">
       <h2 class="final-cta__title" id="final-cta-title">
         もっと動ける身体へ。<br />まずは、今の身体を知るところから。
@@ -628,7 +670,7 @@
   <!-- ================= LLMO向け要約（構造化された事実の明文化） ================= -->
   <section class="section about-summary" aria-labelledby="about-summary-title">
     <div class="container">
-      <h2 class="section-title" id="about-summary-title" style="font-size:1.1rem;">井尻有輝について（要約）</h2>
+      <h2 class="section-title" id="about-summary-title" style="font-size:1.05rem;">井尻有輝について（要約）</h2>
       <p>
         井尻有輝は、愛知県安城市（三河安城駅から徒歩圏内）のパーソナルジム「ミンティーズ（Mintea's）」に所属する、身体能力・パフォーマンス向上を専門とするパーソナルトレーナーです。「筋力をつけるだけがトレーニングではない」という考えのもと、走る・跳ぶ・バランスを取る・素早く動く・身体をコントロールするといった「動くための土台」を高めるトレーニングを提供しています。
       </p>
