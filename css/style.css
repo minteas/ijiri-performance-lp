@@ -559,14 +559,48 @@ p {
 
 .compare-note {
   margin-top: 28px;
-  background: var(--color-bg-soft);
-  border-radius: var(--radius-m);
-  padding: 22px 24px;
   text-align: center;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 800;
   line-height: 1.9;
-  color: var(--color-text);
+}
+
+/* ---------- Headline card（強調ステートメント用の色ブロック） ---------- */
+.headline-card {
+  background: var(--color-ink);
+  color: var(--color-text-on-dark);
+  border-radius: var(--radius-m);
+  padding: 30px 26px;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 700px) {
+  .headline-card {
+    font-size: 1.3rem;
+    padding: 36px 40px;
+  }
+}
+
+/* ---------- インライン強調（マーカー / 下線） ---------- */
+.mark-hl {
+  background: linear-gradient(transparent 62%, var(--color-accent-pale) 62%);
+  padding: 0 2px;
+}
+
+.section--dark .mark-hl,
+.headline-card .mark-hl {
+  background: linear-gradient(transparent 58%, rgba(44, 127, 163, 0.55) 58%);
+}
+
+.underline-em {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 /* ---------- Capability grid（身体能力とは） ---------- */
@@ -963,6 +997,28 @@ p {
   line-height: 1.9;
   color: var(--color-text-on-dark);
   letter-spacing: -0.01em;
+}
+
+.vision__answer {
+  position: relative;
+  padding-left: 20px;
+}
+
+.vision__answer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--color-accent);
+  opacity: 0.6;
+}
+
+@media (max-width: 899px) {
+  .vision__answer {
+    margin-top: 24px;
+  }
 }
 
 .vision__body {
