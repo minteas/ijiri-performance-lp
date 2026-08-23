@@ -392,20 +392,27 @@ p {
   height: 100%;
   object-fit: cover;
   object-position: 50% 15%;
-  filter: grayscale(0.45) contrast(1.15) brightness(0.7);
+  filter: grayscale(0.5) contrast(1.1) brightness(0.62) blur(3px);
+  transform: scale(1.08);
 }
 
 .hero__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(9, 9, 9, 0.75) 0%,
-    rgba(9, 9, 9, 0.6) 28%,
-    rgba(9, 9, 9, 0.7) 50%,
-    rgba(9, 9, 9, 0.93) 78%,
-    rgba(9, 9, 9, 0.98) 100%
-  );
+  background: radial-gradient(
+      ellipse 90% 70% at 50% 42%,
+      rgba(9, 9, 9, 0.35) 0%,
+      rgba(9, 9, 9, 0.72) 68%,
+      rgba(9, 9, 9, 0.94) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(9, 9, 9, 0.8) 0%,
+      rgba(9, 9, 9, 0.68) 30%,
+      rgba(9, 9, 9, 0.76) 55%,
+      rgba(9, 9, 9, 0.94) 80%,
+      rgba(9, 9, 9, 0.98) 100%
+    );
 }
 
 .hero__ghost {
@@ -426,16 +433,19 @@ p {
   position: relative;
   z-index: 1;
   padding: 120px 24px 56px;
-  max-width: var(--max-width);
+  max-width: 640px;
   margin: 0 auto;
   width: 100%;
+  text-align: center;
 }
 
 .hero__meta {
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-en);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   color: var(--color-text-on-dark-light);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -462,7 +472,7 @@ p {
 }
 
 .hero__desc {
-  margin-top: 22px;
+  margin: 22px auto 0;
   font-size: 1rem;
   color: var(--color-text-on-dark-light);
   line-height: 1.9;
@@ -474,6 +484,7 @@ p {
   margin-top: 28px;
   display: flex;
   align-items: baseline;
+  justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
 }
@@ -494,29 +505,22 @@ p {
 }
 
 .hero__cta {
-  margin-top: 30px;
+  margin-top: 34px;
+}
+
+.hero__cta .btn--block {
+  width: auto;
+  min-width: 260px;
 }
 
 @media (min-width: 900px) {
   .hero__content {
-    padding: 0 24px 100px;
-    max-width: 620px;
-    margin: 0;
-    margin-left: max(24px, calc((100vw - var(--max-width)) / 2 + 24px));
+    padding: 0 24px 110px;
+    max-width: 720px;
   }
 
   .hero {
     justify-content: center;
-  }
-
-  .hero__scrim {
-    background: linear-gradient(
-      100deg,
-      rgba(16, 16, 16, 0.96) 0%,
-      rgba(16, 16, 16, 0.86) 32%,
-      rgba(16, 16, 16, 0.35) 60%,
-      rgba(16, 16, 16, 0.05) 78%
-    );
   }
 }
 
