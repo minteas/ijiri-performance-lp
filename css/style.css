@@ -373,13 +373,19 @@ p {
 /* ---------- Hero（フルブリード） ---------- */
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 82svh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
   background: var(--color-ink);
   color: var(--color-text-on-dark);
+}
+
+@media (min-width: 900px) {
+  .hero {
+    min-height: 100svh;
+  }
 }
 
 .hero__media {
@@ -391,27 +397,26 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 15%;
-  filter: grayscale(0.5) contrast(1.1) brightness(0.62) blur(3px);
-  transform: scale(1.08);
+  object-position: 68% 42%;
+  filter: grayscale(0.1) contrast(1.12) brightness(0.85) saturate(1.15);
 }
 
 .hero__scrim {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-      ellipse 90% 70% at 50% 42%,
-      rgba(9, 9, 9, 0.35) 0%,
-      rgba(9, 9, 9, 0.72) 68%,
-      rgba(9, 9, 9, 0.94) 100%
+      ellipse 90% 70% at 50% 38%,
+      rgba(9, 9, 9, 0.18) 0%,
+      rgba(9, 9, 9, 0.55) 68%,
+      rgba(9, 9, 9, 0.85) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(9, 9, 9, 0.8) 0%,
-      rgba(9, 9, 9, 0.68) 30%,
-      rgba(9, 9, 9, 0.76) 55%,
-      rgba(9, 9, 9, 0.94) 80%,
-      rgba(9, 9, 9, 0.98) 100%
+      rgba(9, 9, 9, 0.62) 0%,
+      rgba(9, 9, 9, 0.4) 28%,
+      rgba(9, 9, 9, 0.55) 55%,
+      rgba(9, 9, 9, 0.88) 82%,
+      rgba(9, 9, 9, 0.96) 100%
     );
 }
 
@@ -432,7 +437,7 @@ p {
 .hero__content {
   position: relative;
   z-index: 1;
-  padding: 120px 24px 56px;
+  padding: 24px 24px 56px;
   max-width: 640px;
   margin: 0 auto;
   width: 100%;
@@ -521,30 +526,6 @@ p {
 
   .hero {
     justify-content: center;
-  }
-}
-
-.hero__credit {
-  position: absolute;
-  z-index: 1;
-  right: 24px;
-  bottom: 90px;
-  font-size: 0.66rem;
-  color: var(--color-text-on-dark-light);
-  max-width: 220px;
-  text-align: right;
-  line-height: 1.6;
-}
-
-@media (max-width: 899px) {
-  .hero__credit {
-    left: 24px;
-    right: 24px;
-    bottom: auto;
-    top: 40px;
-    text-align: left;
-    max-width: 80%;
-    opacity: 0.85;
   }
 }
 
