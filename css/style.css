@@ -53,6 +53,74 @@ body {
   overflow-x: hidden;
   padding-bottom: 68px; /* space for mobile sticky CTA */
   -webkit-font-smoothing: antialiased;
+  line-break: strict;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* カタカナ語（スポーツ、パフォーマンス等）が単語の途中で
+   改行されるのを防ぐ。あふれた場合のみ overflow-wrap で強制改行。 */
+h1,
+h2,
+h3,
+p,
+li,
+span,
+a {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* Grid/Flexアイテムの既定 min-width:auto を解除し、
+   長いテキストや実写画像があってもトラック幅が
+   コンテナ外にはみ出さないようにする（横スクロール防止）。 */
+.target-grid > *,
+.profile > *,
+.achievements > *,
+.compare > *,
+.flow > *,
+.features > *,
+.access > *,
+.specs > *,
+.capabilities > * {
+  min-width: 0;
+}
+
+/* ---------- 日本語タイポグラフィ：見出しは行の長さを揃え、
+   本文は孤立語（オーファン）を避ける ---------- */
+h1,
+h2,
+h3,
+.section-title,
+.target-title,
+.hero__title,
+.vision__quote-big,
+.final-cta__title,
+.worry-item,
+.headline-card,
+.profile__wordmark,
+.flow-step__title,
+.feature-card__title,
+.spec-item__title,
+.compare-card__label {
+  text-wrap: balance;
+}
+
+.section-lead,
+.target-lead,
+.hero__desc,
+.compare-card p,
+.feature-card p,
+.spec-item__desc,
+.flow-step p,
+.profile__bio p,
+.vision__body p,
+.vision__kicker,
+.faq-item__a,
+.about-summary p,
+.voice-notice p,
+.target-callout {
+  text-wrap: pretty;
 }
 
 img {
@@ -118,14 +186,30 @@ p {
 }
 
 .section-head {
-  text-align: left;
+  text-align: center;
   margin-bottom: 44px;
   max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eyebrow {
+  justify-content: center;
 }
 
 .section-head--center {
   text-align: center;
   max-width: none;
+}
+
+.section-head--left {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.section-head--left .eyebrow {
+  justify-content: flex-start;
 }
 
 .eyebrow {
@@ -157,9 +241,9 @@ p {
 }
 
 .section-title {
-  font-size: clamp(1.7rem, 6.5vw, 2.2rem);
+  font-size: clamp(1.5rem, 6.5vw, 2.2rem);
   font-weight: 800;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--color-text);
   letter-spacing: -0.02em;
 }
@@ -170,11 +254,16 @@ p {
 }
 
 .section-lead {
-  margin-top: 18px;
+  margin: 18px auto 0;
   color: var(--color-text-light);
   font-size: 0.96rem;
   line-height: 1.9;
   max-width: 46ch;
+}
+
+.section-head--left .section-lead {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .section-head--center .section-lead {
@@ -666,6 +755,11 @@ p {
   font-variant-numeric: tabular-nums;
 }
 
+.worry-item > span:last-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 /* ---------- Compare (技術練習 / フィジカル) ---------- */
 .compare {
   display: grid;
@@ -683,6 +777,7 @@ p {
 
 .compare-card {
   padding: 28px 0;
+  text-align: center;
 }
 
 .compare-card--muted {
@@ -735,12 +830,17 @@ p {
   background: var(--color-ink);
   color: var(--color-text-on-dark);
   border-radius: var(--radius-m);
-  padding: 34px 28px;
-  text-align: left;
-  font-size: 1.2rem;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: clamp(0.92rem, 4.1vw, 1.2rem);
   font-weight: 800;
   line-height: 1.8;
   letter-spacing: -0.01em;
+}
+
+.headline-card__note {
+  display: block;
+  margin-top: 14px;
 }
 
 @media (min-width: 700px) {
@@ -863,6 +963,7 @@ p {
   position: relative;
   padding: 18px 0 0;
   border-top: 2px solid var(--color-ink);
+  text-align: center;
 }
 
 .flow-step__num {
@@ -980,6 +1081,7 @@ p {
 .feature-card {
   padding: 26px 0;
   border-bottom: 1px solid var(--color-border);
+  text-align: center;
 }
 
 @media (min-width: 700px) {
@@ -987,14 +1089,20 @@ p {
     padding: 26px 28px 26px 0;
     border-top: 1px solid var(--color-border);
     border-bottom: none;
+    text-align: left;
+  }
+
+  .feature-card__icon {
+    margin-left: 0;
   }
 }
 
 .feature-card__icon {
+  display: block;
   width: 24px;
   height: 24px;
   color: var(--color-accent);
-  margin-bottom: 18px;
+  margin: 0 auto 18px;
 }
 
 .feature-card__title {
@@ -1011,7 +1119,8 @@ p {
 /* ---------- Voice notice (社会的証明 準備中の告知) ---------- */
 .voice-notice {
   max-width: 640px;
-  text-align: left;
+  margin: 0 auto;
+  text-align: center;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   padding: 32px 0;
@@ -1059,6 +1168,10 @@ p {
   }
 }
 
+.target-grid > div:not(.target-grid__media) {
+  text-align: center;
+}
+
 .target-grid__media img,
 .target-grid__media .media-placeholder {
   border-radius: var(--radius-m);
@@ -1101,35 +1214,81 @@ p {
   color: var(--color-text-on-dark-light);
 }
 
+/* ---------- Achievements（競技実績） ---------- */
+.achievements {
+  margin: 26px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid var(--color-border-dark);
+}
+
+.achievement {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.achievement__rank {
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  line-height: 1;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.achievement__rank small {
+  font-size: 0.42em;
+  font-weight: 700;
+  margin-left: 2px;
+  color: var(--color-text-on-dark-light);
+}
+
+.achievement__name {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--color-text-on-dark-light);
+  text-wrap: pretty;
+}
+
 .target-list {
   margin-top: 22px;
   display: grid;
   gap: 10px;
+  justify-items: center;
 }
 
 .target-list li {
   position: relative;
-  padding-left: 22px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
   font-size: 0.9rem;
+  text-align: left;
 }
 
 .target-list li::before {
   content: "";
-  position: absolute;
-  left: 0;
-  top: 9px;
+  flex: none;
   width: 8px;
   height: 8px;
+  margin-bottom: 2px;
   border-radius: 50%;
   background: var(--color-accent);
+  align-self: center;
 }
 
 .target-callout {
-  margin-top: 26px;
+  margin: 26px auto 0;
+  max-width: 46ch;
   border-left: 2px solid var(--color-accent);
   padding: 4px 0 4px 18px;
   font-size: 0.86rem;
   line-height: 1.85;
+  text-align: left;
 }
 
 .target-callout strong {
@@ -1166,7 +1325,13 @@ p {
 .profile__photo img {
   border-radius: var(--radius-m);
   width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
   filter: grayscale(0.15) contrast(1.05);
+}
+
+.profile > div:last-child {
+  text-align: center;
 }
 
 .profile__wordmark {
@@ -1181,6 +1346,7 @@ p {
 .profile__tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   margin-top: 20px;
 }
@@ -1198,10 +1364,11 @@ p {
 }
 
 .profile__bio {
-  margin-top: 28px;
+  margin: 28px auto 0;
   font-size: 0.94rem;
   line-height: 2;
-  max-width: 60ch;
+  max-width: 42ch;
+  text-align: left;
 }
 
 .profile__bio p + p {
@@ -1220,6 +1387,7 @@ p {
   align-items: flex-start;
   padding: 14px 0;
   border-bottom: 1px solid var(--color-border);
+  text-wrap: pretty;
 }
 
 .profile-facts li::before {
@@ -1232,9 +1400,21 @@ p {
   background: var(--color-accent);
 }
 
+.profile-facts li span {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 /* ---------- Vision (story) ---------- */
 .vision-section {
   padding: 96px 0;
+  text-align: center;
+}
+
+.vision-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .vision__kicker {
@@ -1260,7 +1440,8 @@ p {
   font-size: 0.96rem;
   color: var(--color-text-on-dark-light);
   line-height: 2.1;
-  max-width: 62ch;
+  max-width: 44ch;
+  text-align: left;
 }
 
 .vision__body p + p {
@@ -1305,6 +1486,12 @@ p {
   font-weight: 700;
   color: var(--color-text);
   cursor: pointer;
+  text-wrap: pretty;
+}
+
+.faq-item__q > span:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .faq-item__q::before {
@@ -1428,7 +1615,7 @@ p {
   font-size: 0.85rem;
   color: var(--color-text-light);
   line-height: 2;
-  max-width: 70ch;
+  max-width: 48ch;
 }
 
 /* ---------- Final CTA ---------- */
@@ -1615,6 +1802,10 @@ p {
 
 .u-sp {
   display: inline;
+}
+
+.u-nowrap {
+  white-space: nowrap;
 }
 
 @media (min-width: 700px) {
