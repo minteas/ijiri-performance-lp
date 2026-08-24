@@ -868,6 +868,129 @@ p {
   text-underline-offset: 4px;
 }
 
+/* ---------- Pyramid（技術練習 / 身体能力 / 競技力の関係を積層図で説明） ---------- */
+.pyramid {
+  margin: 56px auto 0;
+  max-width: 620px;
+  text-align: center;
+}
+
+.pyramid__caption {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  letter-spacing: 0.04em;
+  margin-bottom: 22px;
+}
+
+.pyramid__stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.pyramid__tier {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 18px;
+  border-radius: var(--radius-s, 6px);
+  text-align: left;
+}
+
+.pyramid__tier--base {
+  width: 100%;
+  background: var(--color-accent);
+  color: var(--color-text-on-dark);
+}
+
+.pyramid__tier--mid {
+  width: 78%;
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.pyramid__tier--top {
+  width: 54%;
+  background: var(--color-ink);
+  color: var(--color-text-on-dark);
+}
+
+.pyramid__no {
+  flex: none;
+  font-family: var(--font-en);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+  align-self: flex-start;
+  margin-top: 3px;
+}
+
+.pyramid__tier > .pyramid__label,
+.pyramid__tier > .pyramid__sub {
+  min-width: 0;
+}
+
+.pyramid__label {
+  display: block;
+  font-weight: 800;
+  font-size: clamp(0.82rem, 3.4vw, 0.96rem);
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.pyramid__sub {
+  display: block;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  margin-top: 2px;
+  opacity: 0.8;
+  text-wrap: pretty;
+}
+
+.pyramid__tier--mid .pyramid__sub,
+.pyramid__tier--mid .pyramid__no {
+  color: var(--color-text-light);
+}
+
+.pyramid__note {
+  margin: 22px auto 0;
+  max-width: 42ch;
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: var(--color-text-light);
+  text-align: left;
+  text-wrap: pretty;
+  /* keep-all + line-break:strict can push 句読点 to a line start in this
+     narrow column; normal/auto lets the UA's kinsoku shori work correctly */
+  word-break: normal;
+  line-break: auto;
+}
+
+@media (min-width: 700px) {
+  .pyramid__tier {
+    padding: 20px 26px;
+    gap: 14px;
+  }
+
+  .pyramid__label {
+    font-size: 1.02rem;
+  }
+
+  .pyramid__sub {
+    font-size: 0.76rem;
+  }
+
+  .pyramid__note {
+    font-size: 0.9rem;
+  }
+}
+
 /* ---------- Spec sheet（身体能力とは：測定項目のように見せる） ---------- */
 .specs {
   border-top: 1px solid var(--color-border);
