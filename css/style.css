@@ -555,7 +555,7 @@ p {
   }
 
   .hero__content {
-    padding-top: 18vh;
+    padding-top: calc(18vh + 8mm);
   }
 }
 
