@@ -573,22 +573,33 @@ p {
   display: block;
   white-space: nowrap;
   opacity: 0;
-  transform: translateY(60%);
-  animation: heroTitleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform: scale(0.35);
+  filter: blur(10px);
+  animation: heroTitlePop 0.85s cubic-bezier(0.22, 1.4, 0.36, 1) forwards;
 }
 
 .hero__title-line:nth-child(1) {
-  animation-delay: 0.15s;
+  animation-delay: 0.1s;
 }
 
 .hero__title-line:nth-child(2) {
-  animation-delay: 0.32s;
+  animation-delay: 0.26s;
 }
 
-@keyframes heroTitleReveal {
-  to {
+@keyframes heroTitlePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.35);
+    filter: blur(10px);
+  }
+  55% {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
   }
 }
 
@@ -703,6 +714,7 @@ p {
   .hero__title-line {
     opacity: 1;
     transform: none;
+    filter: none;
   }
 }
 
