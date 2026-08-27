@@ -32,6 +32,14 @@
   --radius-l: 10px;
   --radius-full: 999px;
   --shadow-card: 0 12px 32px rgba(18, 18, 16, 0.1);
+  --header-h: 61px;
+}
+
+/* 860px以上はヘッダーにCTAボタンが入り高さが増えるため補正 */
+@media (min-width: 860px) {
+  :root {
+    --header-h: 72px;
+  }
 }
 
 * {
@@ -462,19 +470,15 @@ p {
 /* ---------- Hero（フルブリード） ---------- */
 .hero {
   position: relative;
-  min-height: 82svh;
+  /* site-header は sticky でレイアウト上の高さを持つため、
+     その分を差し引いてヒーローぴったりがファーストビューになるようにする */
+  min-height: calc(100svh - var(--header-h));
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   overflow: hidden;
   background: var(--color-ink);
   color: var(--color-text-on-dark);
-}
-
-@media (min-width: 900px) {
-  .hero {
-    min-height: 100svh;
-  }
 }
 
 .hero__media {
@@ -526,29 +530,11 @@ p {
 .hero__content {
   position: relative;
   z-index: 1;
-  padding: 24px 24px 56px;
+  padding: 24px;
   max-width: 640px;
   margin: 0 auto;
   width: 100%;
   text-align: center;
-}
-
-.hero__meta {
-  font-family: var(--font-en);
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--color-text-on-dark-light);
-  margin-bottom: 24px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-}
-
-.hero__kicker {
-  font-size: clamp(0.72rem, 2vw, 0.85rem);
-  letter-spacing: 0.2em;
-  color: var(--color-accent);
-  margin-bottom: 14px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero__title {
@@ -565,17 +551,38 @@ p {
   white-space: nowrap;
 }
 
-.hero__desc {
-  margin: 22px auto 0;
+/* ---------- Hero直後の補足バンド（旧ヒーロー内テキストの移設先） ---------- */
+.hero-intro {
+  padding: 48px 0 56px;
+}
+
+.hero-intro__inner {
+  max-width: 640px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-intro__meta {
+  font-family: var(--font-en);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-on-dark-light);
+}
+
+.hero-intro__desc {
+  margin: 18px auto 0;
   font-size: 1rem;
   color: var(--color-text-on-dark-light);
   line-height: 1.9;
   max-width: 34ch;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  text-wrap: pretty;
 }
 
-.hero__name {
-  margin-top: 28px;
+.hero-intro__name {
+  margin-top: 26px;
   display: flex;
   align-items: baseline;
   justify-content: center;
@@ -583,38 +590,31 @@ p {
   flex-wrap: wrap;
 }
 
-.hero__name-role {
+.hero-intro__name-role {
   font-size: 0.75rem;
   color: var(--color-text-on-dark-light);
   letter-spacing: 0.05em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
-.hero__name-value {
+.hero-intro__name-value {
   font-size: 1.4rem;
   font-weight: 800;
   color: var(--color-text-on-dark);
   letter-spacing: 0.04em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
-.hero__cta {
-  margin-top: 34px;
+.hero-intro__cta {
+  margin-top: 30px;
 }
 
-.hero__cta .btn--block {
+.hero-intro__cta .btn--block {
   width: auto;
   min-width: 260px;
 }
 
 @media (min-width: 900px) {
-  .hero__content {
-    padding: 0 24px 110px;
-    max-width: 720px;
-  }
-
-  .hero {
-    justify-content: center;
+  .hero-intro {
+    padding: 64px 0 72px;
   }
 }
 
