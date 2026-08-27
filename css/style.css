@@ -492,6 +492,17 @@ p {
   object-fit: cover;
   object-position: 68% 42%;
   filter: grayscale(0.1) contrast(1.12) brightness(0.85) saturate(1.15);
+  transform: scale(1.1);
+  animation: heroKenBurns 9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes heroKenBurns {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .hero__scrim {
@@ -537,6 +548,17 @@ p {
   text-align: center;
 }
 
+/* スマホでは中央より少しだけ上に配置する */
+@media (max-width: 899px) {
+  .hero {
+    justify-content: flex-start;
+  }
+
+  .hero__content {
+    padding-top: 18vh;
+  }
+}
+
 .hero__title {
   font-size: clamp(2.5rem, 12vw, 4.4rem);
   line-height: 1.08;
@@ -544,11 +566,30 @@ p {
   color: var(--color-text-on-dark);
   letter-spacing: -0.03em;
   text-shadow: 0 6px 28px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
 }
 
 .hero__title-line {
   display: block;
   white-space: nowrap;
+  opacity: 0;
+  transform: translateY(60%);
+  animation: heroTitleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero__title-line:nth-child(1) {
+  animation-delay: 0.15s;
+}
+
+.hero__title-line:nth-child(2) {
+  animation-delay: 0.32s;
+}
+
+@keyframes heroTitleReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ---------- Hero直後の補足バンド（旧ヒーロー内テキストの移設先） ---------- */
@@ -653,8 +694,15 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__scroll-cue {
+  .hero__scroll-cue,
+  .hero__media img,
+  .hero__title-line {
     animation: none;
+  }
+
+  .hero__title-line {
+    opacity: 1;
+    transform: none;
   }
 }
 
