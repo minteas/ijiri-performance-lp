@@ -573,9 +573,7 @@ p {
   display: block;
   white-space: nowrap;
   opacity: 0;
-  transform: scale(0.15);
-  filter: blur(18px) brightness(1);
-  animation: heroTitlePop 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: heroTitleFade 1s ease-out forwards;
 }
 
 .hero__title-line:nth-child(1) {
@@ -586,31 +584,9 @@ p {
   animation-delay: 0.3s;
 }
 
-/* 爆発が飛んできて岩のように重く着地するイメージ：
-   一気に膨張→勢い余ってオーバーシュート→重みでわずかに跳ね返り→静止 */
-@keyframes heroTitlePop {
-  0% {
-    opacity: 0;
-    transform: scale(0.15);
-    filter: blur(18px) brightness(1.4);
-  }
-  38% {
+@keyframes heroTitleFade {
+  to {
     opacity: 1;
-    transform: scale(1.2);
-    filter: blur(1px) brightness(1.7);
-  }
-  58% {
-    transform: scale(0.9);
-    filter: blur(0) brightness(1.05);
-  }
-  78% {
-    transform: scale(1.05);
-    filter: blur(0) brightness(1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0) brightness(1);
   }
 }
 
