@@ -573,15 +573,8 @@ p {
   display: block;
   white-space: nowrap;
   opacity: 0;
-  animation: heroTitleFade 2s ease-out forwards;
-}
-
-.hero__title-line:nth-child(1) {
+  animation: heroTitleFade 4s ease-out forwards;
   animation-delay: 0.2s;
-}
-
-.hero__title-line:nth-child(2) {
-  animation-delay: 0.6s;
 }
 
 @keyframes heroTitleFade {
