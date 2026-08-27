@@ -883,41 +883,65 @@ p {
   margin-bottom: 22px;
 }
 
-.pyramid__stack {
+.pyramid__diagram {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-}
-
-.pyramid__tier {
-  width: 100%;
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 10px;
-  padding: 16px 18px;
-  border-radius: var(--radius-s, 6px);
+  align-items: stretch;
+  gap: 18px;
   text-align: left;
 }
 
-.pyramid__tier--base {
+/* 三角形本体：clip-path で尖った頂点を作り、内側に3色の帯を重ねて段を表現 */
+.pyramid__shape {
+  position: relative;
+  flex: none;
+  width: 110px;
+  height: 190px;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  background: var(--color-border);
+}
+
+.pyramid__band {
+  position: absolute;
+  left: 0;
   width: 100%;
-  background: var(--color-accent);
-  color: var(--color-text-on-dark);
 }
 
-.pyramid__tier--mid {
-  width: 78%;
-  background: var(--color-bg-alt);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-}
-
-.pyramid__tier--top {
-  width: 54%;
+.pyramid__band--top {
+  top: 0;
+  height: 33.4%;
   background: var(--color-ink);
-  color: var(--color-text-on-dark);
+}
+
+.pyramid__band--mid {
+  top: 33.4%;
+  height: 33.3%;
+  background: var(--color-bg-alt);
+  border-top: 2px solid var(--color-bg);
+}
+
+.pyramid__band--base {
+  top: 66.7%;
+  height: 33.3%;
+  background: var(--color-accent);
+  border-top: 2px solid var(--color-bg);
+}
+
+.pyramid__labels {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pyramid__row {
+  flex: 1 1 33.33%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 0;
 }
 
 .pyramid__no {
@@ -926,21 +950,31 @@ p {
   font-weight: 800;
   font-size: 0.72rem;
   letter-spacing: 0.04em;
-  opacity: 0.65;
-  align-self: flex-start;
-  margin-top: 3px;
 }
 
-.pyramid__tier > .pyramid__label,
-.pyramid__tier > .pyramid__sub {
+.pyramid__row--top .pyramid__no {
+  color: var(--color-ink);
+}
+
+.pyramid__row--mid .pyramid__no {
+  color: var(--color-text-light);
+}
+
+.pyramid__row--base .pyramid__no {
+  color: var(--color-accent-dark);
+}
+
+.pyramid__row > .pyramid__label,
+.pyramid__row > .pyramid__sub {
   min-width: 0;
 }
 
 .pyramid__label {
   display: block;
   font-weight: 800;
-  font-size: clamp(0.82rem, 3.4vw, 0.96rem);
+  font-size: clamp(0.8rem, 3.2vw, 0.94rem);
   line-height: 1.4;
+  color: var(--color-text);
   text-wrap: pretty;
 }
 
@@ -948,14 +982,9 @@ p {
   display: block;
   font-size: 0.68rem;
   line-height: 1.5;
-  margin-top: 2px;
-  opacity: 0.8;
-  text-wrap: pretty;
-}
-
-.pyramid__tier--mid .pyramid__sub,
-.pyramid__tier--mid .pyramid__no {
+  margin-top: 1px;
   color: var(--color-text-light);
+  text-wrap: pretty;
 }
 
 .pyramid__note {
@@ -973,9 +1002,17 @@ p {
 }
 
 @media (min-width: 700px) {
-  .pyramid__tier {
-    padding: 20px 26px;
-    gap: 14px;
+  .pyramid__diagram {
+    gap: 32px;
+  }
+
+  .pyramid__shape {
+    width: 160px;
+    height: 240px;
+  }
+
+  .pyramid__row {
+    padding: 10px 0;
   }
 
   .pyramid__label {
