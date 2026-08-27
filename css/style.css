@@ -261,6 +261,12 @@ p {
   margin-right: auto;
 }
 
+/* 見出しを常に1行に収める（狭い画面でも折り返さないよう文字サイズを追従させる） */
+.section-title--nowrap {
+  white-space: nowrap;
+  font-size: clamp(1.15rem, 5.6vw, 2.2rem);
+}
+
 .section-lead {
   margin: 18px auto 0;
   color: var(--color-text-light);
